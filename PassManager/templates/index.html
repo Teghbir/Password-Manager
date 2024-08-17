@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} Home{% endblock title %} 
+{% block body %}
+
+<div class="container my-3">
+    <div class="card bg-secondary">
+        <div class="card-body bg-light">
+            <h2 class="card-title">Create strong passwords</h2>
+            <form method="POST" action="{{ url_for('hello_world') }}">
+                <div class="mb-3">
+                    <label for="url" class="form-label">Url</label>
+                    <input type="text" class="form-control" name="url" id="url" aria-describedby="emailHelp"> 
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Notes</label>
+                    <input type="text" class="form-control" name="notes" id="notes">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" name="lowercase" id="lowercase">
+                    <label class="form-check-label" for="lowercase">Include Lowercase Letters</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" name="uppercase" id="uppercase">
+                    <label class="form-check-label" for="uppercase">Include Uppercase Letters</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" name="numbers" id="numbers">
+                    <label class="form-check-label" for="numbers">Include Numbers</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" name="special" id="special">
+                    <label class="form-check-label" for="special">Include Special Characters</label>
+                </div>
+                <div class="mb-3">
+                    <label for="length" class="form-label">Password Length:</label>
+                    <input type="number" class="form-control" name="length" id="length" min="4" required>
+                </div>
+
+                <button class="btn btn-outline-dark" type="submit">Generate Random Passwords</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+
